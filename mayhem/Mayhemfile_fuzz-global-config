@@ -1,0 +1,10 @@
+project: savantenvs/nvme-cli
+target: fuzz-global-config
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-global-config/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-global-config
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/fuzz-global-config/fuzz-global-config.dict

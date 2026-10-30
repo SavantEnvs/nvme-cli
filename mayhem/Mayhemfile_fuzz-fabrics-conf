@@ -1,0 +1,10 @@
+project: savantenvs/nvme-cli
+target: fuzz-fabrics-conf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-fabrics-conf/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-fabrics-conf
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/fuzz-fabrics-conf/fuzz-fabrics-conf.dict

@@ -1,0 +1,10 @@
+project: savantenvs/nvme-cli
+target: fuzz-ini
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-ini/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-ini
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/fuzz-ini/fuzz-ini.dict

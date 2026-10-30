@@ -1,0 +1,9 @@
+project: savantenvs/nvme-cli
+target: fuzz-device
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-device/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-device
+    libfuzzer: true
+    timeout: 20

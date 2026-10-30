@@ -1,0 +1,9 @@
+project: savantenvs/nvme-cli
+target: fuzz-nbft
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-nbft/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-nbft
+    libfuzzer: true
+    timeout: 20

@@ -1,0 +1,10 @@
+project: savantenvs/nvme-cli
+target: fuzz-argconfig
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-argconfig/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-argconfig
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/mayhem/fuzz-argconfig/fuzz-argconfig.dict

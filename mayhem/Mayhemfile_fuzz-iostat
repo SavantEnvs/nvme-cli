@@ -1,0 +1,9 @@
+project: savantenvs/nvme-cli
+target: fuzz-iostat
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz-iostat/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/build-fuzz/tests/fuzz/fuzz-iostat
+    libfuzzer: true
+    timeout: 5
